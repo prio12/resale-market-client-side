@@ -1,10 +1,14 @@
 import React from 'react';
+import AboutUs from '../AboutUs/AboutUs';
+import FeaturedProducts from '../FeaturedProducts/FeaturedProducts';
 import Slider from '../slider/Slider';
 
 const Home = () => {
     return (
         <div>
-          <Slider></Slider>  
+          <Slider></Slider>
+          <AboutUs></AboutUs>
+          <FeaturedProducts></FeaturedProducts>  
         </div>
     );
 };
