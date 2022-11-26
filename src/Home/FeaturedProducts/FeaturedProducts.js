@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const FeaturedProducts = ({ category }) => {
   const { _id, name, img } = category;
@@ -10,8 +11,8 @@ const FeaturedProducts = ({ category }) => {
       <div className="card-body items-center text-center">
         <h2 className="card-title">{name}</h2>
         <div className="card-actions">
-          <button className="btn btn-outline btn-error">See More</button>
-        </div>
+          <Link to={`/collection/${_id}`}><button className="btn btn-outline ">See More</button></Link>
+          </div>
       </div>
     </div>
   );

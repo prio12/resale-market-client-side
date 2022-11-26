@@ -1,0 +1,74 @@
+[
+    {   
+        "categoryId":"63820ffe1ef1b99d604c8c2b",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9vv-2NYSqwESzR1MPFekVXVKcXuemr3EtlA&usqp=CAU",
+        "name":"Iphone 10",
+        "location":"Shonatola,Bogura",
+        "resalePrice":45000,
+        "originalPrice":80000,
+        "used":2.5,
+        "time":"Sat Nov 26 2022 19:57:31",
+        "sellerName":"J.Depp"
+
+    },
+    {   
+        "categoryId":"63820ffe1ef1b99d604c8c2b",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRUQmmampTR6hBjIF5dFGgSmuV4Wiv0QW-Qg&usqp=CAU",
+        "name":"Iphone 11",
+        "location":"Shonatola,Magura",
+        "resalePrice":75000,
+        "originalPrice":93999,
+        "used":1.5,
+        "time":"Sat Nov 26 2022 19:57:31",
+        "sellerName":"M.Ambani"
+
+    },
+    {   
+        "categoryId":"63820ffe1ef1b99d604c8c2c",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqkeXKyN718eLMAXIDJeBiO4XvcpNDaY5xUA&usqp=CAU",
+        "name":"Samsung s22",
+        "location":"Hakirmor,Bogura",
+        "resalePrice":72000,
+        "originalPrice":60000,
+        "used":1,
+        "time":"Sat Nov 26 2022 19:57:31",
+        "sellerName":"W.Bush"
+
+    },
+    {   
+        "categoryId":"63820ffe1ef1b99d604c8c2c",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGRFLDrXZUqmfj7kqfPsBUYUA15UYLZbCajA&usqp=CAU",
+        "name":"Samsung a53",
+        "location":"Namazgor,Bogura",
+        "resalePrice":49999,
+        "originalPrice":39000,
+        "used":1.3,
+        "time":"Sat Nov 26 2022 19:57:31",
+        "sellerName":"M.Obama"
+
+    },
+    {   
+        "categoryId":"63820ffe1ef1b99d604c8c2d",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0NGxqnRCnB_DAFxAV10mA8KaikMfJwItf8Q&usqp=CAU",
+        "name":"Realme 9pro",
+        "location":"Brindabon Para,Bogura",
+        "resalePrice":51999,
+        "originalPrice":40000,
+        "used":1.3,
+        "time":"Sat Nov 26 2022 19:57:31",
+        "sellerName":"M.Obama"
+
+    },
+    {   
+        "categoryId":"63820ffe1ef1b99d604c8c2d",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ObCgvq7-SLHBbPKjoXmym3bu6R5NVgeglg&usqp=CAU",
+        "name":"Realme c35",
+        "location":"Brindabon Para,Bogura",
+        "resalePrice":20490,
+        "originalPrice":12000,
+        "used":1,
+        "time":"Sat Nov 26 2022 19:57:31",
+        "sellerName":"B.Obama"
+
+    }
+]
