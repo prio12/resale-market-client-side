@@ -13,7 +13,7 @@ const Home = () => {
           <Slider></Slider>
           <h3 className="text-4xl my-6 text-orange-600 text-center font-extrabold">Featured Products</h3>
           {/* <AboutUs></AboutUs> */}
-          <div className='grid my-5  grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+          <div className='grid my-5 gap-3  grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
           {
             categoryData.map(category =><FeaturedProducts
             key={category._id}

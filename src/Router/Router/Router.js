@@ -15,9 +15,15 @@ const router= createBrowserRouter([
                 loader:()=> fetch('http://localhost:5000/category')
             },
             {
-                path:'/collection',
-                element:<ProdcutCollection></ProdcutCollection>
-            }
+                path:'/collection/:id',
+                element:<ProdcutCollection></ProdcutCollection>,
+                loader:({params})=>fetch(`http://localhost:5000/collection/${params.id}`)
+            },
+            // {
+            //     path:'/services/:id',
+            //     element:<ServiceDetails></ServiceDetails>,
+            //     loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+            // },
         ]
     }
 ])
