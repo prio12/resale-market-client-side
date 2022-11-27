@@ -1,11 +1,11 @@
-import { useQuery } from '@tanstack/react-query';
-import { data } from 'autoprefixer';
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import DisplayPhoneData from '../DisplayPhoneData/DisplayPhoneData/DisplayPhoneData';
+import BookingModal from './BookingModal/BookingModal';
 
 const ProdcutCollection = () => {
     const phoneCollectionData = useLoaderData()
+    const [bookingItem,setBookingItem] = useState([null])
     return (
         <div>
             <h1 className='text-3xl text-center py-6'>Available Products for you</h1>
@@ -14,9 +14,15 @@ const ProdcutCollection = () => {
                     phoneCollectionData.map(data =><DisplayPhoneData
                     key={data._id}
                     data={data}
+                    setBookingItem = {setBookingItem}
                     ></DisplayPhoneData>)
                 }
             </div>
+            {   bookingItem &&
+                <BookingModal
+                bookingItem={bookingItem}
+                ></BookingModal>
+            }
         </div>
     );
 };

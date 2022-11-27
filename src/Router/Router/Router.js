@@ -1,4 +1,6 @@
 import ProdcutCollection from "../../Pages/Collection/ProdcutCollection";
+import Login from "../../Pages/Login/Login/Login";
+import SignUp from "../../Pages/SignUp/SignUp/SignUp";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Home } = require("../../Home/Home/Home");
@@ -19,11 +21,14 @@ const router= createBrowserRouter([
                 element:<ProdcutCollection></ProdcutCollection>,
                 loader:({params})=>fetch(`http://localhost:5000/collection/${params.id}`)
             },
-            // {
-            //     path:'/services/:id',
-            //     element:<ServiceDetails></ServiceDetails>,
-            //     loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
-            // },
+            {
+                path:'/login',
+                element:<Login></Login>
+            },
+            {
+                path:'/signUp',
+                element:<SignUp></SignUp>
+            }
         ]
     }
 ])
