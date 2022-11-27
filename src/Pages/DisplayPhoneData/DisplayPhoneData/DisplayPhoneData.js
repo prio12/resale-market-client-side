@@ -1,19 +1,22 @@
 import React from 'react';
 
 const DisplayPhoneData = ({data}) => {
-    const {_id,name,image,loaction,resalePrice,originalPrice,used,time,sellerName} = data;
+    const {_id,name,image,location,resalePrice,originalPrice,used,time,sellerName} = data;
     return (
         <div className="card shadow-xl">
-  <figure><img src={image} alt="Shoes" /></figure>
+  <figure><img src={image}  style={{height:'200px'}} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">
-      Shoes!
-      <div className="badge badge-secondary">NEW</div>
+      {name}
     </h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
+    <p>Location: {location}</p>
+    <p>Resale Price: {resalePrice}</p>
+    <p>Original Price: {originalPrice}</p>
+    <p>Used: {used} Years</p>
+    <p>Seller Name: {sellerName} </p>
+    <p>Posted for sale: {time} </p>
     <div className="card-actions justify-end">
-      <div className="badge badge-outline">Fashion</div> 
-      <div className="badge badge-outline">Products</div>
+    <button className="btn btn-outline btn-dark">Book Now</button>
     </div>
   </div>
 </div>
