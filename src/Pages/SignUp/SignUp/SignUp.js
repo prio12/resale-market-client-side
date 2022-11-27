@@ -59,11 +59,6 @@ const SignUp = () => {
             <label className="label">
               <span className="label-text">Role</span>
             </label>
-            {/* <select {...register("gender")}>
-            <option value="female">female</option>
-            <option value="male">male</option>
-            <option value="other">other</option>
-          </select> */}
             <select {...register("role")} className="select select-bordered  w-full max-w-xs">
               <option disabled selected>
                 Pick your Role
