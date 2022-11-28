@@ -1,23 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import logo from '../../assets/images/logo/logo.jpg'
+import logo from "../../assets/images/logo/logo.jpg";
+import { AuthContext } from "../../Contexts/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
 
-    const menuItems = <React.Fragment>
-    <li><Link to='/'>Home</Link></li>
-    <li><Link to='/login'>Login</Link></li>
-    {/* {
-      user?.uid? 
-      <>
-      <li><button onClick={handleLogOut}>Log out</button></li>
-      <li><Link to='/dashboard'>Dashboard</Link></li>
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => console.log(err));
+  };
+  const menuItems = (
+    <React.Fragment>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
 
-
-      </> :
-      <li><Link to='/login'>Login</Link></li>
-    } */}
-  </React.Fragment>
+      {user?.uid ? (
+        <>
+          <li>
+            <button onClick={handleLogOut}>Log out</button>
+          </li>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+        </>
+      ) : (
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+      )}
+    </React.Fragment>
+  );
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -45,15 +60,15 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <Link className="btn btn-outline btn-info text-xl normal-case">Kena Becha</Link>
+        <Link className="btn btn-outline btn-info text-xl normal-case">
+          Kena Becha
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal p-0">
-          {menuItems}
-        </ul>
+        <ul className="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
       <div className="navbar-end">
-      <img style={{width:'60%'}} src={logo} alt="" />
+        <img style={{ width: "60%" }} src={logo} alt="" />
       </div>
     </div>
   );
