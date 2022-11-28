@@ -1,32 +1,33 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const Login = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm();
-//   const {signIn} = useContext(AuthContext)
-//   const [logInError,setLogInError] = useState('')
+  const {signIn} = useContext(AuthContext)
+  const [logInError,setLogInError] = useState('')
 
-//   const navigate = useNavigate();
-//   const location = useLocation()
+  const navigate = useNavigate();
+  const location = useLocation()
 
-//   const from = location.state?.from?.pathname || "/"
+  const from = location.state?.from?.pathname || "/"
 
 
   const handleLogin = data => {
-    // setLogInError('')
+    setLogInError('')
     console.log(data)
 
-    // signIn(data.email,data.password)
-    // .then(result =>{
-    //   const user = result.user;
-    //   console.log(user)
-    //   navigate(from, {replace: true});
-    // })
-    // .catch(err =>{
-    //     setLogInError(err.message)
-    // })
+    signIn(data.email,data.password)
+    .then(result =>{
+      const user = result.user;
+      console.log(user)
+      navigate(from, {replace: true});
+    })
+    .catch(err =>{
+        setLogInError(err.message)
+    })
   }
     return (
         <div className="h-[800px] flex justify-center items-center">
@@ -45,9 +46,9 @@ const Login = () => {
             {/* {errors.password && errors.password.type === "minLength" && <p className="text-red-600">Password must be more than 10 characters</p> } */}
           </div>
         <input className="btn btn-info my-6 w-full" type="submit" />
-        {/* {logInError && <p className="text-red-600">{logInError}</p>} */}
+        {logInError && <p className="text-red-600">{logInError}</p>}
         </form>
-        <p>New to Doctor's Portal? <Link className="text-info font-bold" to="/signUp">Register</Link></p>
+        <p className='mt-4'>New to Doctor's Portal? <Link className="text-info font-bold" to="/signUp">Register</Link></p>
         <div className="divider">OR</div>
         <button className="btn btn-outline w-full">Login with Google</button>
       </div>
