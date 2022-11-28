@@ -1,4 +1,5 @@
 import ProdcutCollection from "../../Pages/Collection/ProdcutCollection";
+import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import Login from "../../Pages/Login/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp/SignUp";
 import PrivateRoute from "../privateRoute/PrivateRoute";
@@ -21,6 +22,10 @@ const router= createBrowserRouter([
                 path:'/collection/:id',
                 element:<PrivateRoute><ProdcutCollection></ProdcutCollection></PrivateRoute>,
                 loader:({params})=>fetch(`http://localhost:5000/collection/${params.id}`)
+            },
+            {
+                path:'/dashboard',
+                element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>
             },
             {
                 path:'/login',
