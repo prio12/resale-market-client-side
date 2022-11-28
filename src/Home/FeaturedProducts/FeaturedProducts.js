@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './FeaturedProducts.css'
 
 const FeaturedProducts = ({ category }) => {
   const { _id, name, img } = category;
   return (
-    <div className="card  shadow-xl">
+    <div className="card  shadow-xl featured-container">
       <figure className="px-10 pt-10">
         <img style={{height:'200px'}} src={img} alt="" className="rounded-xl" />
       </figure>

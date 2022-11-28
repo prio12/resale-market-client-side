@@ -14,21 +14,21 @@ const Navbar = () => {
   const menuItems = (
     <React.Fragment>
       <li>
-        <Link to="/">Home</Link>
+        <Link className="font-bold text-white" to="/">Home</Link>
       </li>
 
       {user?.uid ? (
         <>
           <li>
-            <button onClick={handleLogOut}>Log out</button>
+            <button className="font-bold text-white" onClick={handleLogOut}>Log out</button>
           </li>
           <li>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link className="font-bold  text-white" to="/dashboard">Dashboard</Link>
           </li>
         </>
       ) : (
         <li>
-          <Link to="/login">Login</Link>
+          <Link className="font-bold  text-white" to="/login">Login</Link>
         </li>
       )}
     </React.Fragment>
@@ -60,7 +60,7 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <Link className="btn btn-outline btn-info text-xl normal-case">
+        <Link to='/' className="btn btn-outline  text-white btn-info text-xl normal-case">
           Kena Becha
         </Link>
       </div>

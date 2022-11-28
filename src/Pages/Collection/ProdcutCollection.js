@@ -8,7 +8,7 @@ const ProdcutCollection = () => {
     const [bookingItem,setBookingItem] = useState([null])
     return (
         <div>
-            <h1 className='text-3xl text-center py-6'>Available Products for you</h1>
+            <h1 className='text-3xl  text-center py-12'>Available Products on this Category</h1>
             <div className='grid my-5 gap-4  grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
                 {
                     phoneCollectionData.map(data =><DisplayPhoneData

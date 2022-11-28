@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import toast from "react-hot-toast";
 import { AuthContext } from "../../../Contexts/AuthProvider";
 
 const BookingModal = ({bookingItem}) => {
@@ -25,6 +26,7 @@ const BookingModal = ({bookingItem}) => {
           userLocation:location
         }
         console.log(booking)
+        toast('This item is booked')
     }
   return (
     <>
