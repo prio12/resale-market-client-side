@@ -19,7 +19,7 @@ const BookingModal = ({bookingItem,setBookingItem}) => {
         const booking = {
 
           userName:name,
-          userEmail:email,
+          email,
           bookingItem:item,
           bookingItemImage:bookingItem.image,
           productPrice:price,

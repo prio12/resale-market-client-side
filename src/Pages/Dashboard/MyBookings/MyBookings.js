@@ -10,31 +10,39 @@ const MyBookings = () => {
     const {data: bookings = []} = useQuery({
         queryKey:['bookings', user?.email],
         queryFn:async () =>{
-            const res = await fetch(url);
+            const res = await fetch(url, {
+              headers:{
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+              }
+            });
             const data = await res.json();
             return data;
         }
     })
   return (
     <div>
-      <h3 className="text-2xl text-center">My Bookings</h3>
-      <div>
-        <div className="card w-96 bg-base-100 shadow-xl">
-          <figure className="px-10 pt-10">
-            <img
-              src="https://placeimg.com/400/225/arch"
-              alt="Shoes"
-              className="rounded-xl"
-            />
-          </figure>
-          <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
+      <h3 className="text-2xl font-bold text-center">Your bookings!!</h3>
+      <div className='grid gap-2 my-20  grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
+      {
+        bookings.map(booking =><div key={booking._id}>
+            <div className="card shadow-xl">
+              <figure className="px-10 pt-10">
+                <img
+                  src={booking.bookingItemImage}
+                  alt="Shoes"
+                  className="rounded-xl"
+                />
+              </figure>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title">{booking.bookingItem}</h2>
+                <p className="text-white">Price: {booking.productPrice}</p>
+                <div className="card-actions">
+                  <button className="btn btn-info">Pay Now</button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          </div>)
+      }
       </div>
     </div>
   );
