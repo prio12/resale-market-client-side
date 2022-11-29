@@ -14,6 +14,7 @@ const AddProducts = () => {
         const handleAddProduct = (data) =>{
             const image = data.image[0];
             const formData = new FormData();
+            const time = Date()
             formData.append('image',image);
             const url =`https://api.imgbb.com/1/upload?expiration=600&key=${imageHostKey}`
             fetch(url,{
@@ -32,7 +33,8 @@ const AddProducts = () => {
                         resalePrice:data.resalePrice,
                         originalPrice:data.originalPrice,
                         used:data.used,
-                        sellerName:sellerName
+                        sellerName:sellerName,
+                        time:time,
                     }
                     
 
