@@ -32,7 +32,7 @@ const Sellers = () => {
                                 <th>{i+1}</th>
                                 <td>{seller.name}</td>
                                 <td>{seller.email}</td>
-                                <button className='btn btn-primary'>Delete</button>
+                                <td><button className='btn btn-primary'>Delete</button></td>
                               </tr>)
                         }
                       </tbody>
