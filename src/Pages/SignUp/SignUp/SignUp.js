@@ -50,20 +50,20 @@ const SignUp = () => {
     })
     .then(res =>res.json())
     .then(data => {
-       getUserToken(email)
+      //  getUserToken(email)
     })
   }
 
-  const getUserToken = email =>{
-    fetch(`http://localhost:5000/jwt?email=${email}`)
-    .then(res => res.json())
-    .then(data =>{
-      if(data.accessToken){
-        localStorage.setItem('accessToken', data.accessToken);
-        navigate('/')
-      }
-    })
-  }
+  // const getUserToken = email =>{
+  //   fetch(`http://localhost:5000/jwt?email=${email}`)
+  //   .then(res => res.json())
+  //   .then(data =>{
+  //     if(data.accessToken){
+  //       localStorage.setItem('accessToken', data.accessToken);
+  //       navigate('/')
+  //     }
+  //   })
+  // }
   return (
     <div className="h-[800px] flex justify-center items-center">
       <div className="w-96 p-7">
