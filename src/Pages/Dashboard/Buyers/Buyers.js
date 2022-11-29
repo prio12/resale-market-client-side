@@ -3,20 +3,6 @@ import React from 'react';
 
 const Buyers = () => {
 
-    // const {data: bookings = []} = useQuery({
-    //     queryKey:['bookings', user?.email],
-    //     queryFn:async () =>{
-    //         const res = await fetch(url, {
-    //           headers:{
-    //             authorization: `bearer ${localStorage.getItem('accessToken')}`
-    //           }
-    //         });
-    //         const data = await res.json();
-    //         console.log(data)
-    //         return data;
-    //     }
-    // })
-
     const url = `http://localhost:5000/users?role=Buyer`;
 
     const {data: buyers =[]} = useQuery({
@@ -29,7 +15,29 @@ const Buyers = () => {
     })
     return (
         <div>
-            <h3>buyers{buyers.length}</h3>
+            <h3 className='text-2xl font-bold text-center mb-6'>Total Buyers: {buyers.length}</h3>
+            <div>
+            <table className="table w-full">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {
+                            buyers.map((buyer,i )=><tr key={buyer._id}>
+                                <th>{i+1}</th>
+                                <td>{buyer.name}</td>
+                                <td>{buyer.email}</td>
+                                <button className='btn btn-primary'>Delete</button>
+                              </tr>)
+                        }
+                      </tbody>
+                    </table>
+            </div>
         </div>
     );
 };
