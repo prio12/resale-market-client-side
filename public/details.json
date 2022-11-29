@@ -1,6 +1,6 @@
 [
     {   
-        "categoryId":"63820ffe1ef1b99d604c8c2b",
+        "categoryName":"iPhone",
         "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9vv-2NYSqwESzR1MPFekVXVKcXuemr3EtlA&usqp=CAU",
         "name":"Iphone 10",
         "location":"Shonatola,Bogura",
@@ -12,7 +12,7 @@
 
     },
     {   
-        "categoryId":"63820ffe1ef1b99d604c8c2b",
+        "categoryName":"Iphone",
         "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRUQmmampTR6hBjIF5dFGgSmuV4Wiv0QW-Qg&usqp=CAU",
         "name":"Iphone 11",
         "location":"Shonatola,Magura",
@@ -24,7 +24,7 @@
 
     },
     {   
-        "categoryId":"63820ffe1ef1b99d604c8c2c",
+        "categoryName":"Samsung",
         "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqkeXKyN718eLMAXIDJeBiO4XvcpNDaY5xUA&usqp=CAU",
         "name":"Samsung s22",
         "location":"Hakirmor,Bogura",
@@ -36,7 +36,7 @@
 
     },
     {   
-        "categoryId":"63820ffe1ef1b99d604c8c2c",
+        "categoryName":"Samsung",
         "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGRFLDrXZUqmfj7kqfPsBUYUA15UYLZbCajA&usqp=CAU",
         "name":"Samsung a53",
         "location":"Namazgor,Bogura",
@@ -48,7 +48,7 @@
 
     },
     {   
-        "categoryId":"63820ffe1ef1b99d604c8c2d",
+        "categoryName":"Realme",
         "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0NGxqnRCnB_DAFxAV10mA8KaikMfJwItf8Q&usqp=CAU",
         "name":"Realme 9pro",
         "location":"Brindabon Para,Bogura",
@@ -60,7 +60,7 @@
 
     },
     {   
-        "categoryId":"63820ffe1ef1b99d604c8c2d",
+        "categoryName":"Realme",
         "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ObCgvq7-SLHBbPKjoXmym3bu6R5NVgeglg&usqp=CAU",
         "name":"Realme c35",
         "location":"Brindabon Para,Bogura",
