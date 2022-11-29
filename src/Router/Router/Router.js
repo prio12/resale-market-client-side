@@ -1,8 +1,10 @@
 import DashboardLayout from "../../layout/DashboardLayout";
 import ProdcutCollection from "../../Pages/Collection/ProdcutCollection";
+import AddProducts from "../../Pages/Dashboard/AddProducts/AddProducts";
 import Buyers from "../../Pages/Dashboard/Buyers/Buyers";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import MyBookings from "../../Pages/Dashboard/MyBookings/MyBookings";
+import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
 import Sellers from "../../Pages/Dashboard/Sellers/Sellers";
 import Login from "../../Pages/Login/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp/SignUp";
@@ -52,6 +54,14 @@ const router= createBrowserRouter([
             {
                 path:'/dashboard/buyers',
                 element:<Buyers></Buyers>
+            },
+            {
+                path:'/dashboard/addProduct',
+                element:<AddProducts></AddProducts>
+            },
+            {
+                path:'/dashboard/myProducts',
+                element:<MyProducts></MyProducts>
             },
         ]
     }
