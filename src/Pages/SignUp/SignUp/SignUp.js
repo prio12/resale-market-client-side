@@ -28,12 +28,31 @@ const SignUp = () => {
         }
         updateUser(userInfo)
         .then(()=>{
-
+          saveUserInfo(data.name,data.email,data.role)
         })
         .catch(err => console.log(err))
     })
     .catch(err => console.log(err))
   };
+
+
+
+  //send user info to the db
+
+  const saveUserInfo = (name,email,role) =>{
+    const user = {name,email,role};
+    fetch('http://localhost:5000/users',{
+      method:"POST",
+      headers:{
+        'content-type':'application/json'
+      },
+      body: JSON.stringify(user)
+    })
+    .then(res =>res.json())
+    .then(data => {
+       console.log(data)
+    })
+  }
   return (
     <div className="h-[800px] flex justify-center items-center">
       <div className="w-96 p-7">
