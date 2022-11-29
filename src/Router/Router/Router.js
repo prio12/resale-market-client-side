@@ -1,6 +1,7 @@
 import DashboardLayout from "../../layout/DashboardLayout";
 import ProdcutCollection from "../../Pages/Collection/ProdcutCollection";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
+import MyBookings from "../../Pages/Dashboard/MyBookings/MyBookings";
 import Login from "../../Pages/Login/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp/SignUp";
 import PrivateRoute from "../privateRoute/PrivateRoute";
@@ -40,7 +41,7 @@ const router= createBrowserRouter([
         children:[
             {
                 path:'/dashboard',
-                element:<Dashboard></Dashboard>
+                element:<MyBookings></MyBookings>
             }
         ]
     }
