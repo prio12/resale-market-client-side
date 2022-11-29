@@ -21,6 +21,7 @@ const ProdcutCollection = () => {
             {   bookingItem &&
                 <BookingModal
                 bookingItem={bookingItem}
+                setBookingItem={setBookingItem}
                 ></BookingModal>
             }
         </div>

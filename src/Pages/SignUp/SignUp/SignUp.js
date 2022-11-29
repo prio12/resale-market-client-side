@@ -20,7 +20,7 @@ const SignUp = () => {
     createUser(data.email,data.password)
     .then(result =>{
         const user = result.user;
-        toast('User created successfully!!!')
+        toast.success('User created successfully!!!')
         navigate(from, { replace: true });
         console.log(user)
         const userInfo = {

@@ -1,3 +1,4 @@
+import DashboardLayout from "../../layout/DashboardLayout";
 import ProdcutCollection from "../../Pages/Collection/ProdcutCollection";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import Login from "../../Pages/Login/Login/Login";
@@ -24,16 +25,22 @@ const router= createBrowserRouter([
                 loader:({params})=>fetch(`http://localhost:5000/collection/${params.id}`)
             },
             {
-                path:'/dashboard',
-                element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>
-            },
-            {
                 path:'/login',
                 element:<Login></Login>
             },
             {
                 path:'/signUp',
                 element:<SignUp></SignUp>
+            }
+        ]
+    },
+    {
+        path:'/dashboard',
+        element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        children:[
+            {
+                path:'/dashboard',
+                element:<Dashboard></Dashboard>
             }
         ]
     }
