@@ -5,7 +5,7 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const MyProducts = () => {
     const {user} = useContext(AuthContext)
-    const [btnText,setBtnText] = useState('ADVERTISE')
+    const [advertise,setAdvertise] = useState(true)
     const url = `http://localhost:5000/collection?email=${user?.email}`
 
     const {data: products = [],refetch} = useQuery({
@@ -40,9 +40,9 @@ const MyProducts = () => {
         })
         .then(res =>res.json())
         .then(data =>{
-            if(data.acknowledged){
+            if(data.modifiedCount > 0){
                 toast.success('Successfully advertised')
-                setBtnText('ALREADY ADVERTISED')
+                setAdvertise(false)
             }
         })
     }
@@ -60,7 +60,14 @@ const MyProducts = () => {
                       <p>Sales Status :</p>
                       <div className="card-actions justify-end">
                         <button onClick={() => handleDelete(product._id)} className='btn btn-outline'>Delete</button>
-                        <button onClick={() => handleAdvertise(product._id)}  className='btn btn-outline'>{btnText}</button>
+                        {
+                            advertise ?<>
+                            <button onClick={() => handleAdvertise(product._id)}  className='btn btn-outline'>Advertise</button>
+                            </>:
+                            <>
+                            <button  className='btn btn-disabled'>Advertise</button>
+                            </>
+                        }
                       </div>
                     </div>
                   </div>)
