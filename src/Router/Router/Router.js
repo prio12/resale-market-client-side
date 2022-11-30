@@ -8,6 +8,7 @@ import MyBookings from "../../Pages/Dashboard/MyBookings/MyBookings";
 import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
 import Payment from "../../Pages/Dashboard/Payment/Payment";
 import Sellers from "../../Pages/Dashboard/Sellers/Sellers";
+import HandleError from "../../Pages/HandleError/HandleError";
 import Login from "../../Pages/Login/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp/SignUp";
 import PrivateRoute from "../privateRoute/PrivateRoute";
@@ -75,7 +76,11 @@ const router= createBrowserRouter([
                 element:<MyProducts></MyProducts>
             },
         ]
-    }
+    },
+    {
+        path: "*",
+        element: <HandleError></HandleError>
+      },
 ])
 
 export default router

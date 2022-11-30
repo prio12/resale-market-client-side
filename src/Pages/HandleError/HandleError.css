@@ -1,0 +1,33 @@
+
+.main-container{
+    background-color: black;
+}
+
+.title-container {
+    background-color: red;
+    width: 50%;
+    height: 20%;
+    margin: 20% auto;
+    text-align: center;
+    box-shadow: 35px 15px 15px 25px;
+}
+.title-container h1 {
+    font-size: 120px;
+}
+.title-container p{
+    color: aqua;
+    font-weight: bolder;
+}
+
+@media only screen and (max-width: 600px) {
+    .title-container {
+        width: 100%;
+
+    }
+    .title-container h1 {
+        font-size: 2rem;
+
+    }
+    
+   
+  }
