@@ -5,6 +5,7 @@ import Buyers from "../../Pages/Dashboard/Buyers/Buyers";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import MyBookings from "../../Pages/Dashboard/MyBookings/MyBookings";
 import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
+import Payment from "../../Pages/Dashboard/Payment/Payment";
 import Sellers from "../../Pages/Dashboard/Sellers/Sellers";
 import Login from "../../Pages/Login/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp/SignUp";
@@ -46,6 +47,10 @@ const router= createBrowserRouter([
             {
                 path:'/dashboard',
                 element:<MyBookings></MyBookings>
+            },
+            {
+                path:'/dashboard/payment:id',
+                element:<Payment></Payment>
             },
             {
                 path:'/dashboard/sellers',
