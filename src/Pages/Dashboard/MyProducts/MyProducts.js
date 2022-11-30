@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const MyProducts = () => {
     const {user} = useContext(AuthContext)
+    const [btnText,setBtnText] = useState('ADVERTISE')
     const url = `http://localhost:5000/collection?email=${user?.email}`
 
     const {data: products = [],refetch} = useQuery({
@@ -33,6 +34,18 @@ const MyProducts = () => {
             })
         }
     }
+    const handleAdvertise = id =>{
+        fetch(`http://localhost:5000/collection/advertise/${id}`,{
+            method:"PUT"
+        })
+        .then(res =>res.json())
+        .then(data =>{
+            if(data.acknowledged){
+                toast.success('Successfully advertised')
+                setBtnText('ALREADY ADVERTISED')
+            }
+        })
+    }
     return (
         <div>
             <h3 className='text-2xl font-bold text-center my-10'>Your Products {products.length}</h3>
@@ -47,7 +60,7 @@ const MyProducts = () => {
                       <p>Sales Status :</p>
                       <div className="card-actions justify-end">
                         <button onClick={() => handleDelete(product._id)} className='btn btn-outline'>Delete</button>
-                        <button className='btn btn-outline'>Advertise</button>
+                        <button onClick={() => handleAdvertise(product._id)}  className='btn btn-outline'>{btnText}</button>
                       </div>
                     </div>
                   </div>)
