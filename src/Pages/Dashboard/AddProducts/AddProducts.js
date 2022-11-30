@@ -40,7 +40,7 @@ const AddProducts = () => {
                     }
                     
 
-                    fetch('http://localhost:5000/collection',{
+                    fetch('https://resale-server-side-seven.vercel.app/collection',{
                         method:"POSt",
                         headers:{
                             'content-type':"application/json"

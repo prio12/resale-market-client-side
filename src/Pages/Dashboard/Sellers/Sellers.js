@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 
 const Sellers = () => {
 
-    const url = `http://localhost:5000/users?role=Seller`;
+    const url = `https://resale-server-side-seven.vercel.app/users?role=Seller`;
 
     const {data: sellers =[],refetch} = useQuery({
         queryKey:['Sellers'],
@@ -17,7 +17,7 @@ const Sellers = () => {
     const handleDelete = id =>{
       const agree = window.confirm('Are u sure u wanna delete this seller?')
       if(agree){
-          fetch(`http://localhost:5000/seller/delete/${id}`,{
+          fetch(`https://resale-server-side-seven.vercel.app/seller/delete/${id}`,{
               method:"DELETE"
           })
           .then(res => res.json())

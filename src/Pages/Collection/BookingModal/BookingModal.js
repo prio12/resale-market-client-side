@@ -29,7 +29,7 @@ const BookingModal = ({bookingItem,setBookingItem}) => {
 
         //sending booking data to db
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://resale-server-side-seven.vercel.app/bookings', {
           method:'POST',
           headers:{
             'content-type':'application/json'

@@ -16,14 +16,17 @@ const Navbar = () => {
       <li>
         <Link className="font-bold text-white" to="/">Home</Link>
       </li>
+      <li>
+        <Link className="font-bold text-white" to="/blog">Blog</Link>
+      </li>
 
       {user?.uid ? (
         <>
           <li>
-            <button className="font-bold text-white" onClick={handleLogOut}>Log out</button>
+            <Link className="font-bold  text-white" to="/dashboard">Dashboard</Link>
           </li>
           <li>
-            <Link className="font-bold  text-white" to="/dashboard">Dashboard</Link>
+            <button className="font-bold text-white" onClick={handleLogOut}>Log out</button>
           </li>
         </>
       ) : (

@@ -6,7 +6,7 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 const MyProducts = () => {
     const {user} = useContext(AuthContext)
     const [advertise,setAdvertise] = useState(true)
-    const url = `http://localhost:5000/collection?email=${user?.email}`
+    const url = `https://resale-server-side-seven.vercel.app/collection?email=${user?.email}`
 
     const {data: products = [],refetch} = useQuery({
         queryKey:['bookings', user?.email],
@@ -21,7 +21,7 @@ const MyProducts = () => {
     const handleDelete = id =>{
         const agree = window.confirm('Are u sure u wanna delete this product?')
         if(agree){
-            fetch(`http://localhost:5000/collection/delete/${id}`,{
+            fetch(`https://resale-server-side-seven.vercel.app/collection/delete/${id}`,{
                 method:"DELETE"
             })
             .then(res => res.json())
@@ -35,7 +35,7 @@ const MyProducts = () => {
         }
     }
     const handleAdvertise = id =>{
-        fetch(`http://localhost:5000/collection/advertise/${id}`,{
+        fetch(`https://resale-server-side-seven.vercel.app/collection/advertise/${id}`,{
             method:"PUT"
         })
         .then(res =>res.json())
@@ -57,7 +57,7 @@ const MyProducts = () => {
                       <h2 className="text-2xl font-bold text-center">
                        {product.name}
                       </h2>
-                      <p>Sales Status :</p>
+                      <p>Sales Status : Unsold</p>
                       <div className="card-actions justify-end">
                         <button onClick={() => handleDelete(product._id)} className='btn btn-outline'>Delete</button>
                         {

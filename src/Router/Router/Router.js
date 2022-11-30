@@ -1,4 +1,5 @@
 import DashboardLayout from "../../layout/DashboardLayout";
+import Blogs from "../../Pages/Blogs/Blogs";
 import ProdcutCollection from "../../Pages/Collection/ProdcutCollection";
 import AddProducts from "../../Pages/Dashboard/AddProducts/AddProducts";
 import Buyers from "../../Pages/Dashboard/Buyers/Buyers";
@@ -23,12 +24,16 @@ const router= createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                loader:()=> fetch('http://localhost:5000/category')
+                loader:()=> fetch('https://resale-server-side-seven.vercel.app/category')
             },
             {
                 path:'/collection/:id',
                 element:<PrivateRoute><ProdcutCollection></ProdcutCollection></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/collection/${params.id}`)
+                loader:({params})=>fetch(`https://resale-server-side-seven.vercel.app/collection/${params.id}`)
+            },
+            {
+                path:'/blog',
+                element:<Blogs></Blogs>
             },
             {
                 path:'/login',
@@ -49,8 +54,9 @@ const router= createBrowserRouter([
                 element:<MyBookings></MyBookings>
             },
             {
-                path:'/dashboard/payment:id',
-                element:<Payment></Payment>
+                path:'/dashboard/payment/:id',
+                element:<Payment></Payment>,
+                loader: ({params}) => fetch(`https://resale-server-side-seven.vercel.app/bookings/${params.id}`)
             },
             {
                 path:'/dashboard/sellers',
