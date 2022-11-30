@@ -11,6 +11,7 @@ const AddProducts = () => {
         const imageHostKey = process.env.REACT_APP_imagebb_key;
         const {user} =useContext(AuthContext)
         const sellerName = user?.displayName;
+        const sellerEmail = user?.email;
         const handleAddProduct = (data) =>{
             const image = data.image[0];
             const formData = new FormData();
@@ -34,6 +35,7 @@ const AddProducts = () => {
                         originalPrice:data.originalPrice,
                         used:data.used,
                         sellerName:sellerName,
+                        email:sellerEmail,
                         time:time,
                     }
                     
